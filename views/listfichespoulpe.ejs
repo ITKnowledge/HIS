@@ -48,7 +48,9 @@
                              <td><%= fichespoulpe[i].echantillonneur %></td>
                              <td><a class="" href="/editfiche/<%= fichespoulpe[i]._id %>" role="button"> Edit </a>|
                                 <a href="/delete/<%= fichespoulpe[i]._id %>" method='delete'>Delete</a>|
-                               <a onclick="if (confirm('Voulez vous vraiment supprimer ce patient ?')) supprimer('/listefichespoulpe/<%= fichespoulpe[i]._id%>'); else alert('OK')" href="/listefichespoulpe"> Delete </a>
+                                <a href="/detailfep/<%= fichespoulpe[i]._id %>">Detail</a>
+
+
                              </td>
                            </tr>
                              <% } %>

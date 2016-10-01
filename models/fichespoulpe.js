@@ -7,7 +7,15 @@ var ficheSchema = new Schema({
 	site: String,
 	engin: String,
 	noteur: String,
-	echantillonneur: String
+	echantillonneur: String,
+  detail: [
+    {
+          taille: Number,
+          sex: String,
+          poids: Number,
+          sms: Number
+      }
+  ]
 });
 
 var ficheModel = mongoose.model('Fichespoulpedb', ficheSchema);

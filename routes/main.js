@@ -74,3 +74,21 @@ app.post('/editfiche/:id', function(req, res){
         }
     });
 });
+
+
+app.get('/detailfep/:id', function(req, res){
+
+  console.log(req.params.id);
+  
+  res.render('detailfep', {idfep: req.params.id});
+
+});
+
+
+app.get('/getdata/:id', function(req, res){
+
+  fichespoulpe.findById(req.params.id, function(err, result){
+    res.json(result.detail);
+  });
+
+});
