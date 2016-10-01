@@ -1,0 +1,109 @@
+<% include header.ejs %>
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Page New fiche
+        <small>Optional description</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+        <li class="active">Here</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Your Page Content Here -->
+      <div class="box">
+        <div class="row" style="margin:100px 10px 0px 10px;border:1px solid #D8D8D8;padding:30px;">
+<div class="col-md-10 ">
+<form class="form-horizontal"  method='post' action='/insertfiche'>
+
+
+
+<div class="form-group">
+<label for="inputEmail3" class="col-sm-2 control-label">Date</label>
+<div class="col-sm-10">
+<div class="input-group date">
+ <div class="input-group-addon">
+      <i class="fa fa-calendar"></i>
+ </div>
+       <input type="text" class="form-control pull-right" id="datefiche" name='datefiche' placeholder="Date">
+
+ </div>
+</div>
+</div>
+
+<div class="form-group">
+<label for="inputEmail3" class="col-sm-2 control-label">Nombre de barques actives</label>
+<div class="col-sm-10">
+<input type="number" class="form-control" name='nbrbarquesactif' placeholder="Nombre de barques actives">
+</div>
+</div>
+
+<div class="form-group">
+<label for="inputEmail3" class="col-sm-2 control-label">Site</label>
+<div class="col-sm-10">
+  <select class="form-control"  id="site" name="site">
+  <option  value=""></option>
+  <option  value="Lassarga">Lassarga</option>
+  <option  value="Labuirda">Labuirda</option>
+  <option  value="Lekraa">Lekraa</option>
+  <option  value="Marchika">Marchika</option>
+  </select>
+<!--<input type="text" class="form-control" name='site' placeholder="Site">-->
+</div>
+</div>
+
+
+
+<div class="form-group">
+                <label>Engin</label>
+    <select class="form-control select2" multiple="multiple" style="width: 100%;" id="engin" name="engin">
+
+                  <option value="Engin 1">Engin 1</option>
+                  <option value="Engin 2">Engin 2</option>
+                  <option value="Engin 3">Engin 3</option>
+                  <option value="Engin 4">Engin 4</option>
+    </select>
+</div>
+
+
+<div class="form-group">
+<label for="inputEmail3" class="col-sm-2 control-label">Noteur</label>
+<div class="col-sm-10">
+<input type="text" class="form-control" name='noteur' placeholder="Noteur">
+</div>
+</div>
+
+<div class="form-group">
+<label for="inputEmail3" class="col-sm-2 control-label">Echantillonneur</label>
+<div class="col-sm-10">
+<input type="text" class="form-control" name='echantillonneur' placeholder="Echantillonneur">
+</div>
+</div>
+
+
+<div class="form-group">
+<div class="col-sm-offset-2 col-sm-10">
+<button type="submit" class="btn btn-success">Enregistrer</button>&nbsp;&nbsp;&nbsp;
+</div>
+
+</div>
+
+
+</form>
+<button class="btn btn-success" onclick="window.location.href='/listfichespoulpe'">Back to List</button>
+
+</div>
+</div>
+
+      </div>
+
+    </section>
+    <!-- /.content -->
+
+
+  <% include footer.ejs %>

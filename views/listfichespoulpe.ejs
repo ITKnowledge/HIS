@@ -1,0 +1,76 @@
+<% include header.ejs %>
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Page <%= fichespoulpe.length %>
+        <small>Optional description</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+        <li class="active">Here</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Your Page Content Here -->
+      <div class="box">
+                      <div class="box-header">
+                        <button type="button"  class="btn btn-primary" onclick="window.location.href='/newfichepoulpe'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nouvelle fiche&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                      </div>
+                      <!-- /.box-header -->
+                      <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                          <thead>
+                            <tr>
+                             <th>Numéro</th>
+                             <th>Date</th>
+                             <th>Nombre de barques actives(s)</th>
+                             <th>Site</th>
+                             <th>Engin</th>
+                             <th>Noteur</th>
+                             <th>Achantillonneur</th>
+                             <th>Action</th>
+                           </tr>
+                          </thead>
+                          <tbody>
+                              <%  var cnt = 1;
+                              for(var i=0; i < fichespoulpe.length; i++) { %>
+                            <tr>
+                             <td><%=cnt++%></td>
+                             <td><%= fichespoulpe[i].datefiche %></td>
+                             <td><%= fichespoulpe[i].nbrbarquesactif %></td>
+                             <td><%= fichespoulpe[i].site %></td>
+                             <td><%= fichespoulpe[i].engin %></td>
+                             <td><%= fichespoulpe[i].noteur %></td>
+                             <td><%= fichespoulpe[i].echantillonneur %></td>
+                             <td><a class="" href="/editfiche/<%= fichespoulpe[i]._id %>" role="button"> Edit </a>|
+                                <a href="/delete/<%= fichespoulpe[i]._id %>" method='delete'>Delete</a>|
+                               <a onclick="if (confirm('Voulez vous vraiment supprimer ce patient ?')) supprimer('/listefichespoulpe/<%= fichespoulpe[i]._id%>'); else alert('OK')" href="/listefichespoulpe"> Delete </a>
+                             </td>
+                           </tr>
+                             <% } %>
+                          </tbody>
+                          <tfoot>
+                            <tr>
+                             <th>Numéro</th>
+                             <th>Date</th>
+                             <th>Nombre de barques actives(s)</th>
+                             <th>Site</th>
+                             <th>Engin</th>
+                             <th>Noteur</th>
+                             <th>Achantillonneur</th>
+                             <th>Action</th>
+                           </tr>
+                          </tfoot>
+                        </table>
+                      </div>
+                      <!-- /.box-body -->
+                    </div>
+    </section>
+    <!-- /.content -->
+
+
+  <% include footer.ejs %>
