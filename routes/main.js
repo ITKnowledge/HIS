@@ -78,8 +78,6 @@ app.post('/editfiche/:id', function(req, res){
 
 app.get('/detailfep/:id', function(req, res){
 
-  console.log(req.params.id);
-  
   res.render('detailfep', {idfep: req.params.id});
 
 });
@@ -90,5 +88,33 @@ app.get('/getdata/:id', function(req, res){
   fichespoulpe.findById(req.params.id, function(err, result){
     res.json(result.detail);
   });
+
+});
+
+
+app.post('/save/:id', function(req, res){
+    var fepid = "";
+   fichespoulpe.findById(req.params.id, function(err, fep){
+      fepid = req.params.id;
+      fep.detail = JSON.parse(req.body.obj);
+
+      fep.update({
+          detail: fep.detail
+        },function (err, fepID){
+          if(err){
+            console.log('GET Error: There was a problem retrieving: ' + err);
+            res.redirect('/detailfep/' + req.params.id);
+          }else{
+            res.redirect('/detailfep/' + fepid.toString());
+          }
+        })
+
+
+   });
+
+
+  //
+  //
+  // res.json(JSON.parse(req.body.obj));
 
 });
