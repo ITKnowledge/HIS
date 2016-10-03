@@ -1,0 +1,1 @@
+mongoimport -d hawk -c ventepoulpe --type csv --file vente.csv --headerline

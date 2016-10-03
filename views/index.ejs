@@ -3,8 +3,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Page index <%= fep[0]._id %>
-        <small>Optional description</small>
+        Echantillonnage biologique du poulpe
+        <small>Tableau de bord Année 2016</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -40,9 +40,9 @@
     </section>
     <!-- /.content -->
    <% include footer.ejs %>
-  <script src="http://code.highcharts.com/highcharts.js"></script>
- <script src="https://code.highcharts.com/highcharts-3d.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="../../plugins/highcharts/highcharts.js"></script>
+ <script src="../../plugins/highcharts/highcharts-3d.js"></script>
+<script src="../../plugins/highcharts/exporting.js"></script>
 
 
 
@@ -107,7 +107,7 @@
               type: 'column'
           },
           title: {
-              text: 'Nombre de sorties par mois'
+              text: 'Total poids échantillonné par mois'
           },
           subtitle: {
               text: 'Année: 2016. Source: Centre Régional de l\'INRH à DAKHLA.'
@@ -132,13 +132,13 @@
           yAxis: {
               min: 0,
               title: {
-                  text: 'Nombre (sorties)'
+                  text: 'Nombre (kg)'
               }
           },
           tooltip: {
               headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
               pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                  '<td style="padding:0"><b>{point.y:.1f} sorties</b></td></tr>',
+                  '<td style="padding:0"><b>{point.y:.1f} kg</b></td></tr>',
               footerFormat: '</table>',
               shared: true,
               useHTML: true
@@ -213,7 +213,7 @@
                   selected: true
               },
               ['Hermaphrodite', 8.5],
-              ['inconnu', 6.2]
+              ['Inconnu', 6.2]
           ]
       }]
   });

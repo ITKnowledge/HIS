@@ -1,6 +1,6 @@
 var app = module.parent.exports.app;
 var fichespoulpe = require('../models/fichespoulpe.js');
-var ventepoulpe = require('../models/ventepoulpe.js');
+var salespoulpe = require('../models/salespoulpe.js');
 
 /* GET home page. */
 app.get('/home', function(req, res) {
@@ -15,8 +15,23 @@ app.get('/index', function(req, res){
 });
 
 app.get('/listventespoulpe', function(req, res){
+  // var f = new salespoulpe({
+  //   nbrebarque: "12",
+  //   poids: "88",
+  //   valeur: "12345",
+  //   site: "dakhla"
+  //  });
+  // f.save(function(err, doc){
+  //     if(!err){
+  //       salespoulpe.find(function(err, result){
+  //         res.render('listventespoulpe', {sales: result});
+  //       });
+  //     } else {
+  //         res.end(err);
+  //     }
+  // });
 
-  ventepoulpe.find(function(err, result){
+  salespoulpe.find(function(err, result){
     res.render('listventespoulpe', {sales: result});
   });
 });
