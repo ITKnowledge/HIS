@@ -1,5 +1,25 @@
 var app = module.parent.exports.app;
 var fichespoulpe = require('../models/fichespoulpe.js');
+var ventepoulpe = require('../models/ventepoulpe.js');
+
+/* GET home page. */
+app.get('/home', function(req, res) {
+  res.render('home', { title: 'Express sih' });
+});
+
+app.get('/index', function(req, res){
+
+  fichespoulpe.find(function(err, result){
+    res.render('index', {fep: result});
+  });
+});
+
+app.get('/listventespoulpe', function(req, res){
+
+  ventepoulpe.find(function(err, result){
+    res.render('listventespoulpe', {sales: result});
+  });
+});
 
 app.get('/listfichespoulpe', function(req, res){
     var msg = req.flash('message');
@@ -43,7 +63,6 @@ app.get('/delete/:id', function(req, res){
 });
 
 app.get('/editfiche/:id', function(req, res){
-  console.log('wafik edit fiche');
     fichespoulpe.findOne({ _id: req.params.id }, function(err, doc){
         if(!err){
             res.render('editfichepoulpe', { title: 'Edit', fiche: doc});
@@ -78,14 +97,15 @@ app.post('/editfiche/:id', function(req, res){
 
 app.get('/detailfep/:id', function(req, res){
 
-  res.render('detailfep', {idfep: req.params.id});
-
+  fichespoulpe.findById(req.params.id, function(err, result){
+    res.render('detailfep', {fep: result});
+  });
 });
 
 
 app.get('/getdata/:id', function(req, res){
 
-  fichespoulpe.findById(req.params.id, function(err, result){
+  fichespoulpe.findById(req.params.id , function(err, result){
     res.json(result.detail);
   });
 

@@ -32,6 +32,7 @@
                              <th>Engin</th>
                              <th>Noteur</th>
                              <th>Achantillonneur</th>
+                             <th>Nbre échantillons</th>
                              <th>Action</th>
                            </tr>
                           </thead>
@@ -46,9 +47,10 @@
                              <td><%= fichespoulpe[i].engin %></td>
                              <td><%= fichespoulpe[i].noteur %></td>
                              <td><%= fichespoulpe[i].echantillonneur %></td>
-                             <td><a class="" href="/editfiche/<%= fichespoulpe[i]._id %>" role="button"> Edit </a>|
-                                <a href="/delete/<%= fichespoulpe[i]._id %>" method='delete'>Delete</a>|
-                                <a href="/detailfep/<%= fichespoulpe[i]._id %>">Detail</a>
+                              <td align="center"><%= fichespoulpe[i].detail.length %></td>
+                             <td><a class="btn btn-warning btn-xs"  href="/editfiche/<%= fichespoulpe[i]._id %>" role="button"><i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit </a>
+                                <a class="btn btn-danger btn-xs" href="/delete/<%= fichespoulpe[i]._id %>" onclick="return confirm('&Ecirc;tes-vous sûr de vouloir supprimer la ligne sélectionnée ?')"><i class="fa fa-trash-o"></i>&nbsp;&nbsp;Delete</a>
+                                <a class="btn btn-primary btn-xs" href="/detailfep/<%= fichespoulpe[i]._id %>"><i class="fa fa-building-o" aria-hidden="true"></i>&nbsp;&nbsp;Detail</a>
 
 
                              </td>
@@ -57,13 +59,14 @@
                           </tbody>
                           <tfoot>
                             <tr>
-                             <th>Numéro</th>
-                             <th>Date</th>
-                             <th>Nombre de barques actives(s)</th>
-                             <th>Site</th>
-                             <th>Engin</th>
-                             <th>Noteur</th>
-                             <th>Achantillonneur</th>
+                              <th>Numéro</th>
+                              <th>Date</th>
+                              <th>Nombre de barques actives(s)</th>
+                              <th>Site</th>
+                              <th>Engin</th>
+                              <th>Noteur</th>
+                              <th>Achantillonneur</th>
+                              <th>Nbre échantillons</th>
                              <th>Action</th>
                            </tr>
                           </tfoot>

@@ -19,18 +19,18 @@
       <div class="box">
         <div class="row" style="margin:100px 10px 0px 10px;border:1px solid #D8D8D8;padding:30px;">
 <div class="col-md-10 ">
-<form class="form-horizontal"  method='post' action='/insertfiche'>
+<form  class="form-horizontal" validate  method='post' action='/insertfiche'>
 
 
 
 <div class="form-group">
-<label for="inputEmail3" class="col-sm-2 control-label">Date</label>
+<label for="inputEmail3" class="col-sm-2 control-label">Date de sortie</label>
 <div class="col-sm-10">
 <div class="input-group date">
  <div class="input-group-addon">
       <i class="fa fa-calendar"></i>
  </div>
-       <input type="text" class="form-control pull-right" id="datefiche" name='datefiche' placeholder="Date">
+       <input type="text" class="form-control pull-right" id="datefiche" name='datefiche' placeholder="Date"  required="required">
 
  </div>
 </div>
@@ -39,19 +39,19 @@
 <div class="form-group">
 <label for="inputEmail3" class="col-sm-2 control-label">Nombre de barques actives</label>
 <div class="col-sm-10">
-<input type="number" class="form-control" name='nbrbarquesactif' placeholder="Nombre de barques actives">
+<input type="number" class="form-control" name='nbrbarquesactif' placeholder="Nombre de barques actives"  required="required">
 </div>
 </div>
 
 <div class="form-group">
 <label for="inputEmail3" class="col-sm-2 control-label">Site</label>
 <div class="col-sm-10">
-  <select class="form-control"  id="site" name="site">
+  <select class="form-control"  id="site" name="site"  required="required">
   <option  value=""></option>
   <option  value="Lassarga">Lassarga</option>
   <option  value="Labuirda">Labuirda</option>
-  <option  value="Lekraa">Lekraa</option>
-  <option  value="Marchika">Marchika</option>
+  <option  value="Lekraa">Ntireft</option>
+  <option  value="Marchika">Imoutlan</option>
   </select>
 <!--<input type="text" class="form-control" name='site' placeholder="Site">-->
 </div>
@@ -60,28 +60,30 @@
 
 
 <div class="form-group">
-                <label>Engin</label>
-    <select class="form-control select2" multiple="multiple" style="width: 100%;" id="engin" name="engin">
+    <label for="inputEmail3" class="col-sm-2 control-label">Engin</label>
+    <div class="col-sm-10">
+    <select class="form-control select2" multiple="multiple"  id="engin" name="engin"  required="required">
 
                   <option value="Engin 1">Engin 1</option>
                   <option value="Engin 2">Engin 2</option>
                   <option value="Engin 3">Engin 3</option>
                   <option value="Engin 4">Engin 4</option>
     </select>
+  </div>
 </div>
 
 
 <div class="form-group">
 <label for="inputEmail3" class="col-sm-2 control-label">Noteur</label>
 <div class="col-sm-10">
-<input type="text" class="form-control" name='noteur' placeholder="Noteur">
+<input type="text" class="form-control" name='noteur' placeholder="Noteur"  required="required">
 </div>
 </div>
 
 <div class="form-group">
 <label for="inputEmail3" class="col-sm-2 control-label">Echantillonneur</label>
 <div class="col-sm-10">
-<input type="text" class="form-control" name='echantillonneur' placeholder="Echantillonneur">
+<input type="text" class="form-control" name='echantillonneur' placeholder="Echantillonneur"  required="required">
 </div>
 </div>
 
@@ -89,13 +91,14 @@
 <div class="form-group">
 <div class="col-sm-offset-2 col-sm-10">
 <button type="submit" class="btn btn-success">Enregistrer</button>&nbsp;&nbsp;&nbsp;
+<button class="btn btn-primary" onclick="window.location.href='/listfichespoulpe'">Liste des fiches</button>
 </div>
 
 </div>
 
 
 </form>
-<button class="btn btn-success" onclick="window.location.href='/listfichespoulpe'">Back to List</button>
+
 
 </div>
 </div>
