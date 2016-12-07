@@ -4,7 +4,7 @@
     <section class="content-header">
       <h1>
         Liste des fiches d'échantillonnage du poulpe
-        <small>Année 2016</small>
+        <small>Année</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -22,55 +22,57 @@
                       </div>
                       <!-- /.box-header -->
                       <div class="box-body">
-                        <table id="example1" class="table table-bordered table-striped">
-                          <thead>
-                            <tr>
-                             <th>Numéro</th>
-                             <th>Date</th>
-                             <th>Nombre de barques actives(s)</th>
-                             <th>Site</th>
-                             <th>Engin</th>
-                             <th>Noteur</th>
-                             <th>Achantillonneur</th>
-                             <th>Nbre échantillons</th>
-                             <th>Action</th>
-                           </tr>
-                          </thead>
-                          <tbody>
-                              <%  var cnt = 1;
-                              for(var i=0; i < fichespoulpe.length; i++) { %>
-                            <tr>
-                             <td><%=cnt++%></td>
-                             <td><%= fichespoulpe[i].datefiche %></td>
-                             <td><%= fichespoulpe[i].nbrbarquesactif %></td>
-                             <td><%= fichespoulpe[i].site %></td>
-                             <td><%= fichespoulpe[i].engin %></td>
-                             <td><%= fichespoulpe[i].noteur %></td>
-                             <td><%= fichespoulpe[i].echantillonneur %></td>
-                              <td align="center"><%= fichespoulpe[i].detail.length %></td>
-                             <td><a class="btn btn-warning btn-xs"  href="/editfiche/<%= fichespoulpe[i]._id %>" role="button"><i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit </a>
-                                <a class="btn btn-danger btn-xs" href="/delete/<%= fichespoulpe[i]._id %>" onclick="return confirm('&Ecirc;tes-vous sûr de vouloir supprimer la ligne sélectionnée ?')"><i class="fa fa-trash-o"></i>&nbsp;&nbsp;Delete</a>
-                                <a class="btn btn-primary btn-xs" href="/detailfep/<%= fichespoulpe[i]._id %>"><i class="fa fa-building-o" aria-hidden="true"></i>&nbsp;&nbsp;Detail</a>
+                        
+                        <div class="row"><div class="col-dm-12 col-sm-12"><table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+                                        <thead>
+                                        <tr role="row">
+                                          <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Numéro</th>
+                                          <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Date</th>
+                                          <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Nbre barques</th>
+                                          <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Site</th>
+                                          <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Engin</th>
+                                          <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Noteur</th>
+                                          <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Echantillonneur</th>
+                                          <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Nombre échantillons</th>
+                                          <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Actions</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                          <%  var cnt = 1;
+                                          for(var i=0; i < fichespoulpe.length; i++) { %>
+                                        <tr role="row" class="odd">
+                                          <td class="sorting_1"><%=cnt++%></td>
+                                          <td><%= fichespoulpe[i].datefiche %></td>
+                                          <td><%= fichespoulpe[i].nbrbarquesactif %></td>
+                                          <td><%= fichespoulpe[i].site %></td>
+                                          <td><%= fichespoulpe[i].engin %></td>
+                                          <td><%= fichespoulpe[i].noteur %></td>
+                                          <td><%= fichespoulpe[i].echantillonneur %></td>
+                                           <td align="center"><%= fichespoulpe[i].detail.length %></td>
+                                           <td align="right">
+                                             <a class="btn btn-danger btn-xs" href="/delete/<%= fichespoulpe[i]._id %>" onclick="return confirm('&Ecirc;tes-vous sûr de vouloir supprimer la ligne sélectionnée ?')"><i class="fa fa-trash-o"></i></a>
+                                             <a class="btn btn-info btn-xs"  href="/editfiche/<%= fichespoulpe[i]._id %>" role="button"><i class="fa fa-pencil"></i></a>
+                                             <a class="btn btn-primary btn-xs" href="/detailfep/<%= fichespoulpe[i]._id %>"><i class="fa fa-building-o" aria-hidden="true"></i></a>
 
+                                           </td>
+                                        </tr>
+                                         <% } %>
+                                      </tbody>
+                                        <tfoot>
+                                        <tr>
+                                          <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Numéro</th>
+                                          <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Date</th>
+                                          <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Nbre barques</th>
+                                          <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Site</th>
+                                          <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Engin</th>
+                                          <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Noteur</th>
+                                          <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Echantillonneur</th>
+                                          <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Nombre échantillons</th>
+                                          <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Actions</th>
+                                        </tr>
+                                        </tfoot>
+                                      </table></div></div>
 
-                             </td>
-                           </tr>
-                             <% } %>
-                          </tbody>
-                          <tfoot>
-                            <tr>
-                              <th>Numéro</th>
-                              <th>Date</th>
-                              <th>Nombre de barques actives(s)</th>
-                              <th>Site</th>
-                              <th>Engin</th>
-                              <th>Noteur</th>
-                              <th>Achantillonneur</th>
-                              <th>Nbre échantillons</th>
-                             <th>Action</th>
-                           </tr>
-                          </tfoot>
-                        </table>
                       </div>
                       <!-- /.box-body -->
                     </div>

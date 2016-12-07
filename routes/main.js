@@ -40,7 +40,7 @@ app.get('/listfichespoulpe', function(req, res){
     var msg = req.flash('message');
     fichespoulpe.find({}, function(err, docs){
         res.render('listfichespoulpe', { title: 'List 2016', fichespoulpe: docs, flashmsg: msg});
-    });
+    }).sort({ datefiche: 1 });
 });
 
 app.get('/newfichepoulpe', function(req, res){
